@@ -1,0 +1,26 @@
+{
+  "name": "arms-race",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/empire-games/arms-race.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/empire-games/arms-race/issues"
+  },
+  "homepage": "https://github.com/empire-games/arms-race#readme",
+  "devDependencies": {
+    "electron": "^2.0.6"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
