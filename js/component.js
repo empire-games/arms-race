@@ -4,9 +4,13 @@
     const $ = require("jquery");
 
     $(".hello").click(function() {
-        $("body").css("background-color","blue");
+        window.location.href='../html/game.html';
         console.log("clicked");
     });
+
+    $('button selector').click(function(){
+
+    })
 
 
 })();

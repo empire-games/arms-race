@@ -21,6 +21,7 @@
     "electron": "^2.0.6"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "typed.js": "^2.0.8"
   }
 }
