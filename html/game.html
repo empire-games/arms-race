@@ -3,46 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Arms-Race</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link rel="stylesheet" href="../css/gamestyle.css">
 </head>
 <body>
     <div id ="header" class="header container-fluid">
-        <nav class="header navbar navbar-expand-lg navbar-light bg-light">
-
-                        <a class="navbar-brand" href="#"><img src="../img/logo.png"></a>
-                        <button class="quit">Quit</button>
+        <nav class="text-center header navbar navbar-expand-lg navbar-light bg-light">
+            <h1>Arms Race</h1>
+            <button class="quit">Quit</button>
         </nav>
     </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="gold">
-                        Gold=
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="wood">
-                        Wood=
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="leather">
-                        Leather=
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="builds">
-                        Builds=
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="level">
-                        Level=
+                    <div class="attr col-sm-12 col-md-12 col-lg-12" id="gold">
+                        <i class="fas fa-money-bill-wave">=</i>
                     </div>
                 </div>
-                <div id="myProgress">
-                    <div id="myBar"></div>
+                <div class="container">
+                    <div class="bars">
+                        <div class="house container-fluid">
+                            <span>.22 Pistol</span>
+                            <div class="container-fluid text-center" id="myProgress">
+                                <div id="myBar"></div>
+                            </div>
+                            <button id="22employ">$500  |  Hire Employee</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>.22 Rifle</span>
+                            <div class="text-center" id="myProgress22rifle">
+                               <div id="myBar22rifle"></div>
+                            </div>
+                               <button id="22">$220  | 22  Buy</button>
+                               <button id="22longemploy">$1000  |  Hire Employee</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>9mm</span>
+                            <div class="text-center" id="myProgress9mm">
+                                <div id="myBar9mm"></div>
+                            </div>
+                                <button id="9">$1000  | 9mm Buy</button>
+                                <button id="9employ">$2000  |  Hire Employee</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>40 Cal</span>
+                            <div class="text-center" id="myProgress40cal">
+                                <div id="myBar40cal"></div>
+                            </div>
+                                <button id="40">$2000  | 40 Cal Buy</button>
+                                <button id="40employ">$3000  |  Hire Employee</button>
+                         </div>
+                        <div class="house container-fluid">
+                            <span>Colt 45</span>
+                            <div class="text-center" id="myProgresscolt45">
+                                <div id="myBarcolt45"></div>
+                            </div>
+                                <button id="45">$5000  | 45 Colt Buy</button>
+                            <button id="45employ">$5000 |  Hire Employee</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-
-            <!--<input type="password" class="form-control" id="Sinew" placeholder="Sinew" disabled> Sinew-->
-            <!--<input type="password" class="form-control" id="Rock" placeholder="Rock">Rock-->
 
 
     <div class="container" id="ready-screen">

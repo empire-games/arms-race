@@ -3,12 +3,14 @@
 
     const $ = require("jquery");
 
-    let level = 1;
     let gold = "";
-    let wood = "";
-    let leather = "";
     let builds = "";
-    let employees = "";
+    let levelText = "";
+    let twentyTwoPistol = {createTime: 30, reward: 1000, cost:0, employee:1, upgradeCost:500};
+    let twentyTwoRifle = {createTime: 60, reward: 50, cost:220, employee:1, upgradeCost:1000};
+    let nineMM = {createTime: 90, reward: 100, cost:1000, employee:1, upgradeCost:2000};
+    let fortyCal = {createTime: 120, reward: 500, cost:2000, employee:1, upgradeCost:3000};
+    let colt45 = {createTime: 150, reward: 1000, cost:5000, employee:1, upgradeCost:5000};
 
     $(".quit").click(function() {
         window.location.href='../html/index.html';
@@ -18,97 +20,167 @@
     $(".ready").click(function() {
         $("#ready-head").hide();
         $(".ready").hide();
-        whichLevel();
+        gameScreen();
     });
 
-    function whichLevel() {
-        if(level === 1) {
-            levelOne();
-        } else if(level === 2) {
-            levelTwo();
-        } else {
-            console.log("woahhh")
-        }
-    }
-
-    //========Level 1=========\\
-    const name="";
-    function levelOne() {
-        $( "#ready-screen" ).append( "<p>The year is 3075 bc. You are a local blacksmith and the only one with knowledge" +
-            " of creating a simple sling. You will need to create 6 simple slings so your tribe hunters can gather meat for your tribe." +
-            " First you will need the material...Lucky for you the hunters are desperate and have gathered" +
-            " it for you.</p> " );
+    function gameScreen() {
+        move22pistol();
+        $( "#ready-screen" ).append(levelText);
         gold = 5;
-        wood = 20;
-        leather = 10;
         builds = 0;
-        employees = 1;
-        level = 1;
         $("#gold").append(gold);
-        $("#wood").append(wood);
-        $("#leather").append(leather);
         $("#builds").append(builds);
-        $("#level").append(level);
-        buildFirst();
-        building();
-
     }
 
-    function buildFirst() {
-        $("#myBar").show();
-        $("#ready-screen").append("<div class=\"card\" style=\"width: 18rem;\">\n" +
-            "  <img class=\"card-img-top\" src=\"../img/sling.jpeg\" alt=\"Card image cap\">\n" +
-            "  <div class=\"card-body\">\n" +
-            "    <h5 class=\"card-title\">Sling</h5>\n" +
-            "    <p class=\"card-text\">A sling is a projectile weapon typically used to throw a blunt projectile such as a stone, clay, or lead</p>\n" +
-            "    <a href=\"#\" id=\"build-it\" class=\"btn btn-primary\">Build</a>\n" +
-            "  </div>\n" +
-            "</div>");
-    }
+    $("#22employ").click(function() {
+        if(gold >= twentyTwoPistol.upgradeCost) {
+            $("#22employ").hide();
+            gold -= twentyTwoPistol.upgradeCost;
+            $("#gold").html("Gold: " + gold);
+            twentyTwoPistol.employee++;
+            $("#myBar").append(twentyTwoPistol.employee);
+            console.log(twentyTwoPistol.employee);
+        }
+    });
+    $("#22longemploy").click(function() {
+        if(gold >= twentyTwoRifle.upgradeCost) {
+            $("#22longemploy").hide();
+            gold -= twentyTwoRifle.upgradeCost;
+            $("#gold").html("Gold: " + gold);
+            twentyTwoRifle.employee++;
+            $("#myBar22rifle").append(twentyTwoRifle.employee);
+            console.log(twentyTwoRifle.employee)
+        }
+    });
+    $("#9employ").click(function() {
+        if(gold >= nineMM.upgradeCost) {
+            $("#9employ").hide();
+            gold -= nineMM.upgradeCost;
+            $("#gold").html("Gold: " + gold);
+            nineMM.employee++;
+            $("#myBar9mm").append(nineMM.employee);
+            console.log(nineMM.employee);
+        }
+    });
+    $("#40employ").click(function() {
+        if(gold >= fortyCal.upgradeCost) {
+            $("#40employ").hide();
+            gold -= fortyCal.upgradeCost;
+            $("#gold").html("Gold: " + gold);
+            fortyCal.employee++;
+            $("#myBar40cal").append(fortyCal.employee);
+            console.log(fortyCal.employee);
+        }
+    });
+    $("#45employ").click(function() {
+        if(gold >= colt45.upgradeCost) {
+            $("#45employ").hide();
+            gold -= colt45.upgradeCost;
+            $("#gold").html("Gold: " + gold);
+            colt45.employee++;
+            $("#myBarcolt45").append(colt45.employee);
+            console.log(colt45.employee);
+        }
+    });
+
+
+
+
+    $("#22").click(function() {
+        if(gold >= 220) {
+            $("#myProgress22rifle").show();
+            $("#myBar22rifle").show();
+            $("#22").hide();
+            gold -= twentyTwoRifle.cost;
+            $("#gold").html("<i class=\"fas fa-money-bill-wave\">=</i>" + gold);
+            move22rifle();
+        } else {
+            console.log("yallo")
+        }
+    });
+    $("#9").click(function() {
+        if(gold >= 1000) {
+            $("#myProgress9mm").show();
+            $("#myBar9mm").show();
+            $("#9").hide();
+            gold -= nineMM.cost;
+            $("#gold").html("<i class=\"fas fa-money-bill-wave\">=</i> " + gold);
+            move9mm();
+        } else {
+            console.log("yallo")
+        }
+    });
+    $("#40").click(function() {
+        if(gold >= 2000) {
+            $("#myProgress40cal").show();
+            $("#myBar40cal").show();
+            $("#40").hide();
+            gold -= fortyCal.cost;
+            $("#gold").html("<i class=\"fas fa-money-bill-wave\">=</i> " + gold);
+            move40cal();
+        } else {
+            console.log("yallo")
+        }
+    });
+    $("#45").click(function() {
+        if(gold > 5000) {
+            $("#myProgresscolt45").show();
+            $("#myBarcolt45").show();
+            $("#45").hide();
+            gold -= colt45.cost;
+            $("#gold").html("<i class=\"fas fa-money-bill-wave\">=</i> " + gold);
+            movecolt45();
+        } else {
+            console.log("yallo")
+        }
+    });
+
 
     function building() {
-        $("#build-it").click(function () {
-            $("#build-it").off('click');
-            move();
-            if (builds === 2) {
-                buildComplete();
-            } else {
-                if (leather > 0) {
-                    leather--;
-                    builds++;
-                    $("#leather").html("Leather= " + leather);
-                    $("#builds").html("Builds= " + builds);
-                } else {
-                    console.log("not enough material")
-                }
-            }
+
+        $("#myProgress").click(function () {
+            $("#myProgress").off();
+            move22pistol();
         });
     }
 
-        function buildComplete() {
-            $("#ready-screen").html("<img src='../img/succhunt.jpg' />" +
-                "The hunters had a very successful hunt thanks to your fine craftsmanship" + "<a href=\"#\" id=\"levelup\" class=\"btn btn-primary\">Next Level</a>");
-            $("#myBar").hide();
+    function building22rifle() {
+        $("#myProgress22rifle").click(function() {
+            $("#myProgress22rifle").off();
+            move22rifle();
+        })
+    }
+    function building9mm() {
+        $("#myProgress9mm").click(function() {
+            $("#myProgress9mm").off();
+            move9mm();
+        })
+    }
+    function building40cal() {
+        $("#myProgress40cal").click(function () {
+            $("#myProgress40cal").off();
+            move40cal();
+        });
+    }
+    function buildingcolt45() {
+        $("#myProgresscolt45").click(function () {
+            $("#myProgresscolt45").off();
+            movecolt45();
+        });
+    }
 
-            level++;
-            $("#levelup").click(function() {
-                levelTwo();
-                console.log("hello");
-            });
-            }
-
-
-
-
-    function move() {
+    function move22pistol() {
         console.log("building....");
         let elem = document.getElementById("myBar");
         let width = 1;
-        let id = setInterval(frame, 30 / employees);
+        let id = setInterval(frame, twentyTwoPistol.createTime / twentyTwoPistol.employee);
+
         function frame() {
             if (width >= 100) {
                 clearInterval(id);
                 building();
+                gold += twentyTwoPistol.reward;
+                $("#gold").html("<i class=\"fas fa-money-bill-wave\">=</i> " + gold);
             } else {
                 width++;
                 elem.style.width = width + '%';
@@ -116,74 +188,80 @@
         }
     }
 
-    //=========continue game===========\\
-    $(".back-to-game").click(function() {
-        window.location.href='../html/game.html';
-    });
-
-    function levelTwo() {
-        $("#myBar").show();
-        $( "#ready-screen" ).html( "<p>The hunters had a very succesful hunt. While on the hunt they discovered a new " +
-            "item. They want you to build 10 of these as a prototype.</p>" );
-        gold = 5;
-        wood = 20;
-        leather = 10;
-        builds = 0;
-        employees = 1;
-        level =2;
-        $("#gold").html("Gold= " + gold);
-        $("#wood").html("Wood= " + wood);
-        $("#leather").html("Leather= " + leather);
-        $("#builds").html("Builds= " + builds);
-        $("#level").html("Level= " + level);
-        buildFirst2();
-        building2();
-
-    }
-
-    function buildFirst2() {
-        $("#ready-screen").append("<div class=\"card\" style=\"width: 18rem;\">\n" +
-            "  <img class=\"card-img-top\" src=\"../img/bow.jpeg\" alt=\"Card image cap\">\n" +
-            "  <div class=\"card-body\">\n" +
-            "    <h5 class=\"card-title\">Bow and Arrow</h5>\n" +
-            "    <p class=\"card-text\">The bow and arrow is a ranged weapon system consisting of an elastic launching device (bow) and long-shafted projectiles (arrows).</p>\n" +
-            "    <a href=\"#\" id=\"build-it\" class=\"btn btn-primary\">Build</a>\n" +
-            "  </div>\n" +
-            "</div>");
-    }
-    function building2() {
-        $("#build-it").click(function () {
-            $("#build-it").off('click');
-            move2();
-            if (builds === 10) {
-                buildComplete2();
-            } else {
-                if (wood > 0) {
-                    wood--;
-                    builds++;
-                    $("#wood").html("Wood= " + wood);
-                    $("#builds").html("Builds= " + builds);
-                } else {
-                    console.log("not enough material")
-                }
-            }
-        });
-    }
-
-    function buildComplete2() {
-        window.location.href='../html/congrats.html';
-        level++;
-    }
-
-    function move2() {
-        console.log("building....");
-        let elem = document.getElementById("myBar");
+    function move22rifle() {
+        console.log("buildingrifle....");
+        let elem = document.getElementById("myBar22rifle");
         let width = 1;
-        let id = setInterval(frame, 30 / employees);
+        let id = setInterval(frame, twentyTwoRifle.createTime / twentyTwoRifle.employee);
+
         function frame() {
             if (width >= 100) {
                 clearInterval(id);
-                building();
+                building22rifle();
+                gold += twentyTwoRifle.reward;
+                $("#gold").html("<i class=\"fas fa-money-bill-wave\">=</i> " + gold);
+                width = 1;
+
+            } else {
+                width++;
+                elem.style.width = width + '%';
+            }
+        }
+    }
+    function move9mm() {
+        console.log("building9mm....");
+        let elem = document.getElementById("myBar9mm");
+        let width = 1;
+        let id = setInterval(frame, nineMM.createTime / nineMM.employee);
+
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+                building9mm();
+                gold += nineMM.reward;
+                $("#gold").html("<i class=\"fas fa-money-bill-wave\">=</i> " + gold);
+                width = 1;
+
+            } else {
+                width++;
+                elem.style.width = width + '%';
+            }
+        }
+    }
+    function move40cal() {
+        console.log("building40cal....");
+        let elem = document.getElementById("myBar40cal");
+        let width = 1;
+        let id = setInterval(frame, fortyCal.createTime / fortyCal.employee);
+
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+                building40cal();
+                gold += fortyCal.reward;
+                $("#gold").html("<i class=\"fas fa-money-bill-wave\">=</i> " + gold);
+                width = 1;
+
+            } else {
+                width++;
+                elem.style.width = width + '%';
+            }
+        }
+    }
+    function movecolt45() {
+        console.log("buildingcolt45....");
+        let elem = document.getElementById("myBarcolt45");
+        let width = 1;
+        let id = setInterval(frame, colt45.createTime / colt45.employee);
+
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+                buildingcolt45();
+                gold += colt45.reward;
+                $("#gold").html("<i class=\"fas fa-money-bill-wave\">=</i> " + gold);
+                width = 1;
+
             } else {
                 width++;
                 elem.style.width = width + '%';
