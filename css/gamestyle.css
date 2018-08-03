@@ -1,0 +1,29 @@
+body {
+    background-color: goldenrod;
+}
+#header {
+    background-color: whitesmoke;
+}
+.banner {
+    display: block;
+    min-height: 200px;
+    width: 100%;
+    position: relative;
+}
+#gold {
+    background-color: hotpink;
+    height: 2em;
+    width: 10%;
+}
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+}
+body {
+    background-image: url("");
+}
