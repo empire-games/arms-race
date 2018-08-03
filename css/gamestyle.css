@@ -1,5 +1,6 @@
 body {
     background-color: goldenrod;
+    font-family: 'Anton', sans-serif;
 }
 #header {
     background-color: whitesmoke;
@@ -23,6 +24,7 @@ body {
     width: 1%;
     height: 30px;
     background-color: green;
+    display: none;
 }
 body {
     background-image: url("");
