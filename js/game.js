@@ -3,12 +3,12 @@
 
     const $ = require("jquery");
 
-    let level =1;
-    let gold ="";
-    let wood ="";
-    let leather ="";
+    let level = 1;
+    let gold = "";
+    let wood = "";
+    let leather = "";
     let builds = "";
-    let employees ="";
+    let employees = "";
 
     $(".quit").click(function() {
         window.location.href='../html/index.html';
@@ -19,7 +19,6 @@
         $("#ready-head").hide();
         $(".ready").hide();
         whichLevel();
-
     });
 
     function whichLevel() {
@@ -44,7 +43,7 @@
         leather = 10;
         builds = 0;
         employees = 1;
-        level =1;
+        level = 1;
         $("#gold").append(gold);
         $("#wood").append(wood);
         $("#leather").append(leather);
@@ -55,8 +54,8 @@
 
     }
 
-
     function buildFirst() {
+        $("#myBar").show();
         $("#ready-screen").append("<div class=\"card\" style=\"width: 18rem;\">\n" +
             "  <img class=\"card-img-top\" src=\"../img/sling.jpeg\" alt=\"Card image cap\">\n" +
             "  <div class=\"card-body\">\n" +
@@ -66,11 +65,12 @@
             "  </div>\n" +
             "</div>");
     }
+
     function building() {
         $("#build-it").click(function () {
             $("#build-it").off('click');
             move();
-            if (builds === 10) {
+            if (builds === 2) {
                 buildComplete();
             } else {
                 if (leather > 0) {
@@ -78,14 +78,10 @@
                     builds++;
                     $("#leather").html("Leather= " + leather);
                     $("#builds").html("Builds= " + builds);
-
-
-
                 } else {
                     console.log("not enough material")
                 }
             }
-
         });
     }
 
@@ -113,13 +109,13 @@
             if (width >= 100) {
                 clearInterval(id);
                 building();
-
             } else {
                 width++;
                 elem.style.width = width + '%';
             }
         }
     }
+
     //=========continue game===========\\
     $(".back-to-game").click(function() {
         window.location.href='../html/game.html';
@@ -127,7 +123,8 @@
 
     function levelTwo() {
         $("#myBar").show();
-        $( "#ready-screen" ).html( "<p>ya level two.</p> <button id='build'>Build</button>" );
+        $( "#ready-screen" ).html( "<p>The hunters had a very succesful hunt. While on the hunt they discovered a new " +
+            "item. They want you to build 10 of these as a prototype.</p>" );
         gold = 5;
         wood = 20;
         leather = 10;
@@ -144,7 +141,6 @@
 
     }
 
-
     function buildFirst2() {
         $("#ready-screen").append("<div class=\"card\" style=\"width: 18rem;\">\n" +
             "  <img class=\"card-img-top\" src=\"../img/bow.jpeg\" alt=\"Card image cap\">\n" +
@@ -159,22 +155,18 @@
         $("#build-it").click(function () {
             $("#build-it").off('click');
             move2();
-            if (builds === 20) {
+            if (builds === 10) {
                 buildComplete2();
             } else {
-                if (leather > 0) {
+                if (wood > 0) {
                     wood--;
                     builds++;
                     $("#wood").html("Wood= " + wood);
                     $("#builds").html("Builds= " + builds);
-
-
-
                 } else {
                     console.log("not enough material")
                 }
             }
-
         });
     }
 
@@ -182,6 +174,7 @@
         window.location.href='../html/congrats.html';
         level++;
     }
+
     function move2() {
         console.log("building....");
         let elem = document.getElementById("myBar");
@@ -191,16 +184,10 @@
             if (width >= 100) {
                 clearInterval(id);
                 building();
-
             } else {
                 width++;
                 elem.style.width = width + '%';
             }
         }
     }
-
-
-
-
-
 })();
