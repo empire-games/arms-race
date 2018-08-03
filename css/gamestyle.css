@@ -12,20 +12,94 @@ body {
     position: relative;
 }
 #gold {
-    background-color: hotpink;
+    background-color: papayawhip;
     height: 2em;
-    width: 10%;
-}
-#myProgress {
     width: 100%;
+}
+
+/*=======Progress bar stylization================*/
+#myProgress {
+    width: 90%;
     background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    border-radius: 25px;
 }
 #myBar {
     width: 1%;
-    height: 30px;
-    background-color: green;
+    height: 2em;
+    background-color: cadetblue;
+    border-radius: 25px;
+
+}
+#myProgress22rifle {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
     display: none;
+    border-radius: 25px;
 }
-body {
-    background-image: url("");
+#myBar22rifle {
+    width: 1%;
+    height: 2em;
+    background-color: springgreen;
+    display: none;
+    border-radius: 25px;
+
 }
+#myProgress9mm {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    display: none;
+    border-radius: 25px;
+}
+#myBar9mm {
+    width: 1%;
+    height: 2em;
+    background-color: hotpink;
+    display: none;
+    border-radius: 25px;
+
+}
+#myProgress40cal {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    display: none;
+    border-radius: 25px;
+}
+#myBar40cal {
+    width: 1%;
+    height: 2em;
+    background-color: yellowgreen;
+    display: none;
+    border-radius: 25px;
+
+}
+#myProgresscolt45 {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    display: none;
+    border-radius: 25px;
+
+}
+#myBarcolt45 {
+    width: 1%;
+    height: 2em;
+    background-color: chartreuse;
+    display: none;
+    border-radius: 25px;
+
+}
+.house {
+    background-color: whitesmoke;
+    padding: 1em;
+    margin: 1em;
+}
+
