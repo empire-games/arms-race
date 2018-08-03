@@ -8,9 +8,6 @@
         console.log("clicked");
     });
 
-    $('button selector').click(function(){
-
-    })
 
 
 })();
