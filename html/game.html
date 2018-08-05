@@ -3,53 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <title>Arms-Race</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link rel="stylesheet" href="../css/gamestyle.css">
 </head>
 <body>
     <div id ="header" class="header container-fluid">
-        <nav class="header navbar navbar-expand-lg navbar-light bg-light">
-
-                        <a class="navbar-brand" href="#"><img src="../img/logo.png"></a>
-                        <button class="quit">Quit</button>
+        <nav class="text-center header navbar navbar-expand-lg navbar-light bg-light">
+            <h1>Arms Race</h1>
+            <button class="quit">Quit</button>
         </nav>
     </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="gold">
-                        Gold=
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="wood">
-                        Wood=
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="leather">
-                        Leather=
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="builds">
-                        Builds=
-                    </div>
-                    <div class="col-sm-3 col-md-3 col-lg-3" id="level">
-                        Level=
+                    <div class="attr col-sm-12 col-md-12 col-lg-12" id="gold">
+                        <i class="fas fa-money-bill-wave">=</i>
                     </div>
                 </div>
-                <div id="myProgress">
-                    <div id="myBar"></div>
-                </div>
-            </div>
-
-
-
-            <!--<input type="password" class="form-control" id="Sinew" placeholder="Sinew" disabled> Sinew-->
-            <!--<input type="password" class="form-control" id="Rock" placeholder="Rock">Rock-->
-
-
     <div class="container" id="ready-screen">
         <h1 id="ready-head">Are you ready to begin?</h1>
         <button class="ready text-center">Begin</button>
 
     </div>
+                <div class="container">
+                    <div class="bars">
+                        <div class="house container-fluid">
+                            <div id="circle1"><span>.22 Pistol</span><img src="../img/22pistol.jpeg" height="40em" width="40em"></div>
+                            <div class="container-fluid text-center" id="myProgress">
+                                <div id="myBar"></div>
+                            </div>
+                            <button id="22employ">$500  |  Hire Employee</button>
+                            <button id="22manage">$10000  |  Hire Manager</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <div class="circle" id="circle2"><span>.22 Rifle</span><img src="../img/22rifle.jpeg" height="50em" width="60em"></div>
+                            <div class="text-center" id="myProgress22rifle">
+                               <div id="myBar22rifle"></div>
+                            </div>
+                               <button id="22">$220  | 22  Buy</button>
+                               <button id="22longemploy">$1000  |  Hire Employee</button>
+                                <button id="22longmanage">$15000  |  Hire Manager</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>9mm</span>
+                            <div class="text-center" id="myProgress9mm">
+                                <div id="myBar9mm"></div>
+                            </div>
+                                <button id="9">$1000  | 9mm Buy</button>
+                                <button id="9employ">$2000  |  Hire Employee</button>
+                                 <button id="9manage">$20000  |  Hire Manager</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>40 Cal</span>
+                            <div class="text-center" id="myProgress40cal">
+                                <div id="myBar40cal"></div>
+                            </div>
+                                <button id="40">$2000  | 40 Cal Buy</button>
+                                <button id="40employ">$3000  |  Hire Employee</button>
+                            <button id="40manage">$30000  |  Hire Manager</button>
+                         </div>
+                        <div class="house container-fluid">
+                            <span>Colt 45</span>
+                            <div class="text-center" id="myProgresscolt45">
+                                <div id="myBarcolt45"></div>
+                            </div>
+                                <button id="45">$3000  | 45 Colt Buy</button>
+                            <button id="45employ">$5000 |  Hire Employee</button>
+                            <button id="45manage">$50000  |  Hire Manager</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>Ak 47</span>
+                            <div class="text-center" id="myProgressak47">
+                                <div id="myBarak47"></div>
+                            </div>
+                            <button id="47">$5000  | AK 47 Buy</button>
+                            <button id="47employ">$7000 |  Hire Employee</button>
+                            <button id="47manage">$70000  |  Hire Manager</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>Scar</span>
+                            <div class="text-center" id="myProgressscar">
+                                <div id="myBarscar"></div>
+                            </div>
+                            <button id="scar">$7000  | Scar Buy</button>
+                            <button id="scaremploy">$10000 |  Hire Employee</button>
+                            <button id="scarmanage">$100000  |  Hire Manager</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>M 60</span>
+                            <div class="text-center" id="myProgressm60">
+                                <div id="myBarm60"></div>
+                            </div>
+                            <button id="60">$15000  | M 60 Buy</button>
+                            <button id="60employ">$20000 |  Hire Employee</button>
+                            <button id="60manage">$200000  |  Hire Manager</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>Grenade Launcher</span>
+                            <div class="text-center" id="myProgressgrenadeLauncher">
+                                <div id="myBargrenadeLauncher"></div>
+                            </div>
+                            <button id="grenade">$30000  | Grenade Launcher Buy</button>
+                            <button id="grenadeemploy">$50000 |  Hire Employee</button>
+                            <button id="grenademanage">$500000  |  Hire Manager</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>Abrams</span>
+                            <div class="text-center" id="myProgressabrams">
+                                <div id="myBarabrams"></div>
+                            </div>
+                            <button id="abrams">$1000000  | Abrams Buy</button>
+                            <button id="abramsemploy">$2000000 |  Hire Employee</button>
+                            <button id="abramsmanage">$20000000  |  Hire Manager</button>
+                        </div>
+                        <div class="house container-fluid">
+                            <span>F 22</span>
+                            <div class="text-center" id="myProgressf22">
+                                <div id="myBarf22"></div>
+                            </div>
+                            <button id="f22">$1000000  | F22 Buy</button>
+                            <button id="f22employ">$5000000 |  Hire Employee</button>
+                            <button id="f22manage">$50000000  |  Hire Manager</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
     <script type="application/javascript" src="../js/game.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
