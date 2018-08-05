@@ -102,4 +102,113 @@ body {
     padding: 1em;
     margin: 1em;
 }
+#myProgressak47 {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    display: none;
+    border-radius: 25px;
+
+}
+#myBarak47 {
+    width: 1%;
+    height: 2em;
+    background-color: red;
+    display: none;
+    border-radius: 25px;
+
+}
+#myProgressscar {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    display: none;
+    border-radius: 25px;
+
+}
+#myBarscar {
+    width: 1%;
+    height: 2em;
+    background-color: orange;
+    display: none;
+    border-radius: 25px;
+
+}
+#myProgressm60 {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    display: none;
+    border-radius: 25px;
+
+}
+#myBarm60 {
+    width: 1%;
+    height: 2em;
+    background-color: lawngreen;
+    display: none;
+    border-radius: 25px;
+
+}
+#myProgressgrenadeLauncher {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    display: none;
+    border-radius: 25px;
+
+}
+#myBargrenadeLauncher {
+    width: 1%;
+    height: 2em;
+    background-color: darkcyan;
+    display: none;
+    border-radius: 25px;
+
+}
+#myProgressabrams {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    display: none;
+    border-radius: 25px;
+
+}
+#myBarabrams {
+    width: 1%;
+    height: 2em;
+    background-color: gold;
+    display: none;
+    border-radius: 25px;
+
+}
+#myProgressf22 {
+    width: 90%;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 16px;
+    display: none;
+    border-radius: 25px;
+
+}
+#myBarf22 {
+    width: 1%;
+    height: 2em;
+    background-color: hotpink;
+    display: none;
+    border-radius: 25px;
+
+}
+#circle {
+    height: 6em;
+    width: 6em;
+    text-align: center;
+}
+
+
 
